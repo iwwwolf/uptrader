@@ -106,7 +106,7 @@
         .accordion__content {
             max-width: rem(1200);
             padding: rem(0 18 30);
-            display: block;
+            display: block !important;
             margin: 0 auto;
             position: static;
         }
@@ -135,5 +135,11 @@
 
     .accordion.container {
         max-width: none;
+    }
+}
+
+@media(max-width: 900px) {
+    .accordion__item {
+        display: block !important;
     }
 }
