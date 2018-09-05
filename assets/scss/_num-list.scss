@@ -1,0 +1,23 @@
+.num-list {
+    list-style: none;
+    counter-reset: my-counter;
+    margin: rem(0 0 35);
+    padding: 0;
+    li {
+        counter-increment: my-counter;
+        min-height: rem(32);
+        padding-left: rem(30);
+        position: relative;
+        margin: rem(0 0 12);
+        &::before {
+            color: $second-color;
+            font-size: rem(32);
+            font-weight: 300;
+            line-height: 1.3;
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: counter(my-counter);
+        }
+    }
+}

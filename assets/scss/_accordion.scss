@@ -1,0 +1,139 @@
+.accordion__item {
+    margin-bottom: rem(12);
+    &:after {
+        display: table;
+        line-height: 0;
+        clear: both;
+        content: '';
+    }
+}
+
+.accordion__name {
+    min-height: rem(68);
+    padding: rem(10 50 10 20);
+    font-size: rem(19);
+    background: rgba(#fff, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+
+    &.opened {
+        .accordion__arrow {
+            svg {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+.accordion__icon {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: rem(35);
+    max-height: rem(36);
+    flex-grow: 1;
+    margin-right: rem(20);
+}
+
+.accordion__arrow {
+    display: block;
+    width: rem(20);
+    position: absolute;
+    right: rem(15);
+    top: 50%;
+    transform: translateY(-50%);
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: rotate(180deg);
+    }
+}
+
+.accordion__content {
+    display: none;
+    margin-bottom: rem(12);
+    position: relative;
+    padding-bottom: rem(270,14);
+    &-wrap {
+        max-width: rem(680);
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.accordion__image {
+    width: 200%;
+    position: absolute;
+    right: rem(-18);
+    bottom: 0;
+    &:before {
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(243,242,218,1) 0%,rgba(243,242,218,0) 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width: 560px) {
+    .accordion__image {
+        width: 170%;
+    }
+}
+
+@media(min-width: 768px) {
+    .accordion__image {
+        width: 130%;
+    }
+}
+
+@media(min-width: 920px) {
+    .accordion__item {
+        display: none;
+        margin: 0;
+
+        .accordion__content {
+            max-width: rem(1200);
+            padding: rem(0 18 30);
+            display: block;
+            margin: 0 auto;
+            position: static;
+        }
+        &:first-child {
+            display: block;
+        }
+    }
+    .accordion__name {
+        display: none !important;
+    }
+
+    .accordion__image {
+        width: auto;
+        height: 100%;
+        right: 0;
+        img {
+            max-width: none;
+            min-width: 100%;
+            min-height: 100%;
+            max-height: 100%;
+        }
+        &:before {
+            display: none;
+        }
+    }
+
+    .accordion.container {
+        max-width: none;
+    }
+}

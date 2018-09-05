@@ -1,0 +1,19 @@
+.ways {
+    padding: rem(44 0 40);
+    background: transparent;
+    transition: all 250ms;
+    &.active {
+        background: #f3f2da;
+    }
+}
+
+@media(min-width: 920px) {
+    .ways {
+        background: #f3f2da;
+        padding: rem(0 0 240);
+        position: relative;
+        h1 {
+            display: none;
+        }
+    }
+}
